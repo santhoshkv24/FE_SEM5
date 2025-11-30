@@ -1,11 +1,13 @@
 import { Box, Text, VStack, SimpleGrid } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { teamService } from '@/services/teamService'
+import { useThemeContext } from '@/context/ThemeContext'
 import TeamCard from '@/components/common/TeamCard'
 
 const Team = () => {
   const [team, setTeam] = useState([])
   const [loading, setLoading] = useState(true)
+  const { colors } = useThemeContext()
 
   useEffect(() => {
     const fetchTeam = async () => {
@@ -25,14 +27,14 @@ const Team = () => {
     <Box py={16} px={4}>
       <VStack maxW="1200px" mx="auto" gap={10}>
         <VStack textAlign="center" gap={4}>
-          <Text fontSize="4xl" fontWeight="bold" color="gray.800">Meet Our Team</Text>
-          <Text color="gray.600" maxW="600px">
+          <Text fontSize="4xl" fontWeight="bold" color={colors.text}>Meet Our Team</Text>
+          <Text color={colors.textSubtle} maxW="600px">
             Our dedicated team of experts is here to help you succeed in your learning journey
           </Text>
         </VStack>
 
         {loading ? (
-          <Text>Loading team...</Text>
+          <Text color={colors.text}>Loading team...</Text>
         ) : (
           <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} gap={6} w="100%">
             {team.map((member) => (

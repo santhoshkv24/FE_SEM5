@@ -1,6 +1,7 @@
 import { Box, VStack, Input, Textarea, Button, SimpleGrid } from '@chakra-ui/react'
 import { useState } from 'react'
 import { blogService } from '@/services/blogService'
+import { useThemeContext } from '@/context/ThemeContext'
 import { Toaster, toaster } from '@/components/ui/toaster'
 
 const BlogForm = ({ blog, onSuccess }) => {
@@ -9,10 +10,10 @@ const BlogForm = ({ blog, onSuccess }) => {
     content: blog?.content || '',
     author: blog?.author || '',
     category: blog?.category || '',
-    image: blog?.image || '',
-    date: blog?.date || new Date().toISOString().split('T')[0],
+    image: blog?.image || ''
   })
   const [loading, setLoading] = useState(false)
+  const { colors } = useThemeContext()
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -38,7 +39,7 @@ const BlogForm = ({ blog, onSuccess }) => {
   }
 
   return (
-    <Box as="form" onSubmit={handleSubmit} bg="white" p={6} borderRadius="lg" shadow="md" w="100%" maxW="600px">
+    <Box as="form" onSubmit={handleSubmit} bg={colors.cardBg} p={6} borderRadius="lg" shadow="md" w="100%" maxW="600px">
       <Toaster />
       <VStack gap={4}>
         <Input

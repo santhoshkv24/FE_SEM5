@@ -1,12 +1,14 @@
 import { Box, Table, Button, HStack, Text, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
 import { blogService } from '@/services/blogService'
+import { useThemeContext } from '@/context/ThemeContext'
 import { Toaster, toaster } from '@/components/ui/toaster'
 import BlogForm from '@/components/forms/BlogForm'
 
 const BlogsTable = ({ blogs, onRefresh }) => {
   const [showForm, setShowForm] = useState(false)
   const [editingBlog, setEditingBlog] = useState(null)
+  const { colors } = useThemeContext()
 
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this article?')) {
@@ -35,7 +37,7 @@ const BlogsTable = ({ blogs, onRefresh }) => {
     <VStack align="stretch" gap={4}>
       <Toaster />
       <HStack justify="space-between">
-        <Text fontSize="xl" fontWeight="bold">Blog Management</Text>
+        <Text fontSize="xl" fontWeight="bold" color={colors.text}>Blog Management</Text>
         <Button colorPalette="green" onClick={() => { setEditingBlog(null); setShowForm(!showForm) }} px={4} py={2}>
           {showForm ? 'Cancel' : 'Add New Article'}
         </Button>
@@ -47,24 +49,24 @@ const BlogsTable = ({ blogs, onRefresh }) => {
         </Box>
       )}
 
-      <Box bg="white" borderRadius="lg" shadow="sm" overflow="hidden">
+      <Box bg={colors.cardBg} borderRadius="lg" shadow="sm" overflow="hidden">
         <Table.Root>
           <Table.Header>
             <Table.Row>
-              <Table.ColumnHeader px={4} py={3}>Title</Table.ColumnHeader>
-              <Table.ColumnHeader px={4} py={3}>Author</Table.ColumnHeader>
-              <Table.ColumnHeader px={4} py={3}>Category</Table.ColumnHeader>
-              <Table.ColumnHeader px={4} py={3}>Date</Table.ColumnHeader>
-              <Table.ColumnHeader px={4} py={3}>Actions</Table.ColumnHeader>
+              <Table.ColumnHeader px={4} py={3} color={colors.text}>Title</Table.ColumnHeader>
+              <Table.ColumnHeader px={4} py={3} color={colors.text}>Author</Table.ColumnHeader>
+              <Table.ColumnHeader px={4} py={3} color={colors.text}>Category</Table.ColumnHeader>
+              <Table.ColumnHeader px={4} py={3} color={colors.text}>Date</Table.ColumnHeader>
+              <Table.ColumnHeader px={4} py={3} color={colors.text}>Actions</Table.ColumnHeader>
             </Table.Row>
           </Table.Header>
           <Table.Body>
             {blogs.map((blog) => (
               <Table.Row key={blog.id}>
-                <Table.Cell px={4} py={3}>{blog.title}</Table.Cell>
-                <Table.Cell px={4} py={3}>{blog.author}</Table.Cell>
-                <Table.Cell px={4} py={3}>{blog.category}</Table.Cell>
-                <Table.Cell px={4} py={3}>{new Date(blog.date).toLocaleDateString()}</Table.Cell>
+                <Table.Cell px={4} py={3} color={colors.text}>{blog.title}</Table.Cell>
+                <Table.Cell px={4} py={3} color={colors.text}>{blog.author}</Table.Cell>
+                <Table.Cell px={4} py={3} color={colors.text}>{blog.category}</Table.Cell>
+                <Table.Cell px={4} py={3} color={colors.text}>{new Date(blog.date).toLocaleDateString()}</Table.Cell>
                 <Table.Cell px={4} py={3}>
                   <HStack gap={2}>
                     <Button size="sm" colorPalette="yellow" onClick={() => handleEdit(blog)} px={3} py={1}>

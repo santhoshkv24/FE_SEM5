@@ -2,10 +2,13 @@ import { Box, Flex, Text, HStack, VStack } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa'
+import { useThemeContext } from '@/context/ThemeContext'
 
 const Footer = () => {
+  const { colors } = useThemeContext()
+  
   return (
-    <Box bg="gray.800" color="white" py={10} px={4}>
+    <Box bg={colors.footerBg} color="white" py={10} px={4}>
       <Flex maxW="1200px" mx="auto" direction={{ base: 'column', md: 'row' }} gap={8} justify="space-between">
         <VStack align="start" gap={3}>
           <Text fontSize="xl" fontWeight="bold">
@@ -45,18 +48,18 @@ const Footer = () => {
           </HStack>
           <HStack color="gray.400">
             <FiPhone />
-            <Text>+1 234 567 890</Text>
+            <Text>+91 -  9361888416</Text>
           </HStack>
           <HStack color="gray.400">
             <FiMapPin />
-            <Text>123 Learning St, Education City</Text>
+            <Text>Boys Hostel (Vedavati/Ganga), SRM AP, Guntur</Text>
           </HStack>
         </VStack>
       </Flex>
 
       <Box borderTop="1px" borderColor="gray.700" mt={8} pt={6}>
         <Text textAlign="center" color="gray.500">
-          © 2024 EduQuest. All rights reserved.
+          © 2025 EduQuest. All rights reserved.
         </Text>
       </Box>
     </Box>

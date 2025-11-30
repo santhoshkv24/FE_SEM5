@@ -21,7 +21,7 @@
       "title": "Complete Web Development Bootcamp",
       "description": "Learn HTML, CSS, JavaScript, React and Node.js from scratch. Build real-world projects and become a full-stack developer.",
       "instructor": "John Smith",
-      "price": 99.99,
+      "price": 2999,
       "duration": "40 hours",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400",
       "category": "Web Development",
@@ -33,7 +33,7 @@
       "title": "Python for Data Science",
       "description": "Master Python programming and data analysis techniques. Learn pandas, numpy, matplotlib and machine learning basics.",
       "instructor": "Sarah Johnson",
-      "price": 79.99,
+      "price": 1999,
       "duration": "35 hours",
       "image": "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400",
       "category": "Data Science",
@@ -45,7 +45,7 @@
       "title": "UI/UX Design Masterclass",
       "description": "Learn user interface and user experience design principles. Master Figma and create stunning designs.",
       "instructor": "Emily Davis",
-      "price": 89.99,
+      "price": 899,
       "duration": "30 hours",
       "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400",
       "category": "Design",
@@ -57,7 +57,7 @@
       "title": "Mobile App Development with React Native",
       "description": "Build cross-platform mobile apps for iOS and Android using React Native and JavaScript.",
       "instructor": "Mike Wilson",
-      "price": 109.99,
+      "price": 1599,
       "duration": "45 hours",
       "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400",
       "category": "Mobile Development",
@@ -69,7 +69,7 @@
       "title": "Digital Marketing Fundamentals",
       "description": "Learn SEO, social media marketing, content marketing and paid advertising strategies.",
       "instructor": "Lisa Chen",
-      "price": 69.99,
+      "price": 1699,
       "duration": "25 hours",
       "image": "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=400",
       "category": "Marketing",
@@ -81,7 +81,7 @@
       "title": "Cloud Computing with AWS",
       "description": "Master Amazon Web Services and cloud architecture. Prepare for AWS certification exams.",
       "instructor": "Robert Brown",
-      "price": 129.99,
+      "price": 1299,
       "duration": "50 hours",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400",
       "category": "Cloud Computing",
@@ -94,8 +94,7 @@
       "id": "1",
       "title": "Getting Started with React in 2024",
       "content": "React continues to be one of the most popular JavaScript libraries for building user interfaces. In this comprehensive guide, we'll explore the latest features and best practices for React development. Whether you're a beginner or an experienced developer, understanding React's component-based architecture and hooks system is essential for modern web development. We'll cover useState, useEffect, and custom hooks to help you build efficient applications.",
-      "author": "Mike Wilson",
-      "date": "2024-11-15",
+      "author": "Karthik Subramanian",
       "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400",
       "category": "React"
     },
@@ -103,8 +102,7 @@
       "id": "2",
       "title": "Best Practices for Online Learning",
       "content": "Online learning has transformed education, making it accessible to millions worldwide. To make the most of your online learning experience, it's important to create a dedicated study space, set realistic goals, and maintain a consistent schedule. Engaging actively with course materials, participating in discussions, and applying what you learn through projects can significantly enhance your learning outcomes.",
-      "author": "Emily Davis",
-      "date": "2024-11-10",
+      "author": "Swathi Reddy",
       "image": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400",
       "category": "Education"
     },
@@ -112,8 +110,7 @@
       "id": "3",
       "title": "The Future of AI in Education",
       "content": "Artificial Intelligence is revolutionizing the education sector. From personalized learning paths to intelligent tutoring systems, AI is making education more adaptive and effective. Machine learning algorithms can analyze student performance and provide customized recommendations, while natural language processing enables interactive learning experiences through chatbots and virtual assistants.",
-      "author": "Sarah Johnson",
-      "date": "2024-11-05",
+      "author": "Venkatesh Rao",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400",
       "category": "Technology"
     },
@@ -121,8 +118,7 @@
       "id": "4",
       "title": "Building a Career in Tech",
       "content": "The tech industry offers numerous opportunities for career growth and innovation. Whether you're interested in software development, data science, cybersecurity, or cloud computing, there's a path for you. Focus on building a strong foundation in programming, stay updated with industry trends, contribute to open-source projects, and never stop learning. Networking and building a personal brand can also accelerate your career.",
-      "author": "John Smith",
-      "date": "2024-10-28",
+      "author": "Lakshmi Narayanan",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400",
       "category": "Career"
     }
@@ -133,72 +129,71 @@
       "name": "Jane Doe",
       "email": "jane@example.com",
       "subject": "Course Inquiry",
-      "message": "I have a question about the web development course. Is it suitable for complete beginners?",
-      "date": "2024-11-20"
+      "message": "I have a question about the web development course. Is it suitable for complete beginners?"
     }
   ],
   "team": [
     {
       "id": "1",
-      "name": "Dr. Robert Brown",
-      "role": "CEO & Founder",
-      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400",
+      "name": "Santhosh",
+      "role": "Founder",
+      "image": "https://res.cloudinary.com/duiohzvoi/image/upload/v1764523963/WhatsApp_Image_2025-11-30_at_10.34.08_PM_qdoujt.jpg",
       "bio": "20+ years in education technology. Former Google engineer with a passion for democratizing education."
     },
     {
       "id": "2",
-      "name": "Lisa Chen",
-      "role": "Head of Curriculum",
-      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400",
+      "name": "Lokesh",
+      "role": "CEO",
+      "image": "https://res.cloudinary.com/duiohzvoi/image/upload/v1764523962/WhatsApp_Image_2025-11-30_at_10.27.58_PM_wp3qwz.jpg",
       "bio": "Former Stanford professor with expertise in instructional design and e-learning methodologies."
     },
     {
       "id": "3",
-      "name": "Mike Wilson",
-      "role": "Lead Instructor",
-      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
+      "name": "Siddharth",
+      "role": "Co-Founder",
+      "image": "https://res.cloudinary.com/duiohzvoi/image/upload/v1764523963/WhatsApp_Image_2025-11-30_at_10.24.47_PM_mk3wth.jpg",
       "bio": "Full-stack developer with 10+ years of experience. Taught over 50,000 students worldwide."
     },
     {
       "id": "4",
-      "name": "Sarah Johnson",
-      "role": "Data Science Lead",
-      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400",
+      "name": "Mokshith",
+      "role": "Head of AI Research",
+      "image": "https://res.cloudinary.com/duiohzvoi/image/upload/v1764523964/WhatsApp_Image_2025-11-30_at_10.25.36_PM_luw5yl.jpg",
       "bio": "Ph.D. in Machine Learning from MIT. Previously worked at Amazon and Netflix on recommendation systems."
     }
   ],
   "testimonials": [
     {
       "id": "1",
-      "name": "Alex Thompson",
-      "role": "Software Developer at Google",
-      "content": "This platform transformed my career. The courses are well-structured and the instructors are amazing! I went from a complete beginner to landing my dream job.",
+      "name": "S. Aravind",
+      "role": "Frontend Developer at Zoho Corp",
+      "content": "I joined the platform mainly to strengthen my React concepts. The way topics were explained made it very easy to follow. The project-based approach helped me confidently clear my interview at Zoho.",
       "rating": 5,
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"
+      "image": "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=400"
     },
     {
       "id": "2",
-      "name": "Maria Garcia",
-      "role": "Data Analyst at Amazon",
-      "content": "I went from zero coding knowledge to landing my dream job in 6 months! The Python for Data Science course was incredibly comprehensive.",
+      "name": "Divya Ramesh",
+      "role": "Data Analyst at TCS Chennai",
+      "content": "I wanted a structured path to get into data analytics. The Python and SQL modules were very practical. I could relate everything directly to my current work. Definitely worth the time.",
       "rating": 5,
-      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400"
+      "image": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400"
     },
     {
       "id": "3",
-      "name": "James Lee",
-      "role": "UI Designer at Spotify",
-      "content": "The UI/UX course opened so many doors for me. The practical projects helped me build a portfolio that impressed employers.",
-      "rating": 5,
-      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400"
+      "name": "Karthik N",
+      "role": "UI/UX Designer at Freshworks",
+      "content": "The design course was very hands-on. The assignments helped me build a portfolio that got shortlisted in multiple companies. The explanations were simple and relatable.",
+      "rating": 4,
+      "image": "https://images.unsplash.com/photo-1520342868574-5fa3804e551c?w=400"
     },
     {
       "id": "4",
-      "name": "Emma Wilson",
-      "role": "Marketing Manager at HubSpot",
-      "content": "Best investment I've made in my career. The digital marketing course gave me skills that I use every single day at work.",
-      "rating": 4,
-      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400"
+      "name": "Meera S",
+      "role": "Digital Marketing Executive at Byju's",
+      "content": "The digital marketing lessons covered everything from basics to campaign execution. The examples felt relevant to Indian brands, which made it much easier to understand.",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=400"
     }
   ],
   "pricing": [
@@ -218,7 +213,7 @@
     {
       "id": "2",
       "name": "Pro",
-      "price": 29,
+      "price": 999,
       "period": "month",
       "features": [
         "All courses included",
@@ -232,7 +227,7 @@
     {
       "id": "3",
       "name": "Enterprise",
-      "price": 99,
+      "price": 1599,
       "period": "month",
       "features": [
         "Everything in Pro",

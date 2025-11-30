@@ -1,6 +1,7 @@
 import { Box, VStack, Input, Textarea, Button, SimpleGrid } from '@chakra-ui/react'
 import { useState } from 'react'
 import { courseService } from '@/services/courseService'
+import { useThemeContext } from '@/context/ThemeContext'
 import { Toaster, toaster } from '@/components/ui/toaster'
 
 const CourseForm = ({ course, onSuccess }) => {
@@ -16,6 +17,7 @@ const CourseForm = ({ course, onSuccess }) => {
     rating: course?.rating || 4.5,
   })
   const [loading, setLoading] = useState(false)
+  const { colors } = useThemeContext()
 
   const handleChange = (e) => {
     const value = e.target.type === 'number' ? parseFloat(e.target.value) : e.target.value
@@ -42,7 +44,7 @@ const CourseForm = ({ course, onSuccess }) => {
   }
 
   return (
-    <Box as="form" onSubmit={handleSubmit} bg="white" p={6} borderRadius="lg" shadow="md" w="100%" maxW="600px">
+    <Box as="form" onSubmit={handleSubmit} bg={colors.cardBg} p={6} borderRadius="lg" shadow="md" w="100%" maxW="600px">
       <Toaster />
       <VStack gap={4}>
         <Input

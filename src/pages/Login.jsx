@@ -2,6 +2,7 @@ import { Box, Text, VStack, Input, Button } from '@chakra-ui/react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '@/context/AuthContext'
+import { useThemeContext } from '@/context/ThemeContext'
 import { Toaster, toaster } from '@/components/ui/toaster'
 
 const Login = () => {
@@ -9,6 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const { login } = useAuth()
+  const { colors } = useThemeContext()
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
@@ -21,11 +23,13 @@ const Login = () => {
         description: `Welcome back, ${user.name}!`,
         type: 'success',
       })
-      if (user.role === 'admin') {
-        navigate('/dashboard')
-      } else {
-        navigate('/')
-      }
+      setTimeout(() => {
+        if (user.role === 'admin') {
+          navigate('/dashboard')
+        } else {
+          navigate('/')
+        }
+      }, 1000)
     } catch (error) {
       toaster.create({
         title: 'Login failed',
@@ -40,11 +44,11 @@ const Login = () => {
   return (
     <Box py={16} px={4} minH="60vh">
       <Toaster />
-      <Box maxW="400px" mx="auto" bg="white" p={8} borderRadius="lg" shadow="md">
+      <Box maxW="400px" mx="auto" bg={colors.cardBg} p={8} borderRadius="lg" shadow="md">
         <VStack gap={6}>
           <VStack textAlign="center">
-            <Text fontSize="2xl" fontWeight="bold" color="gray.800">Welcome Back</Text>
-            <Text color="gray.600">Login to access your account</Text>
+            <Text fontSize="2xl" fontWeight="bold" color={colors.text}>Welcome Back</Text>
+            <Text color={colors.textMuted}>Login to access your account</Text>
           </VStack>
 
           <Box as="form" onSubmit={handleSubmit} w="100%">
@@ -69,8 +73,8 @@ const Login = () => {
             </VStack>
           </Box>
 
-          <Box bg="gray.100" p={4} borderRadius="md" w="100%">
-            <Text fontSize="sm" color="gray.600" textAlign="center">
+          <Box bg={colors.bgAlt} p={4} borderRadius="md" w="100%">
+            <Text fontSize="sm" color={colors.textMuted} textAlign="center">
               <strong>Demo Credentials:</strong><br />
               Admin: admin@eduquest.com / admin123<br />
               User: john@example.com / user123

@@ -4,6 +4,7 @@ import { courseService } from '@/services/courseService'
 import { blogService } from '@/services/blogService'
 import { contactService } from '@/services/contactService'
 import { FiBook, FiFileText, FiMail, FiUsers } from 'react-icons/fi'
+import { useThemeContext } from '@/context/ThemeContext'
 import BarChart from '@/components/charts/BarChart'
 import PieChart from '@/components/charts/PieChart'
 import CoursesTable from '@/components/dashboard/CoursesTable'
@@ -16,6 +17,7 @@ const Dashboard = () => {
   const [contacts, setContacts] = useState([])
   const [loading, setLoading] = useState(true)
   const [activeTab, setActiveTab] = useState('overview')
+  const { colors } = useThemeContext()
 
   useEffect(() => {
     fetchAllData()
@@ -63,15 +65,15 @@ const Dashboard = () => {
   if (loading) {
     return (
       <Box py={16} px={4} textAlign="center">
-        <Text>Loading dashboard...</Text>
+        <Text color={colors.text}>Loading dashboard...</Text>
       </Box>
     )
   }
 
   return (
-    <Box py={8} px={4} bg="gray.50" minH="100vh">
+    <Box py={8} px={4} minH="100vh">
       <VStack maxW="1200px" mx="auto" gap={8} align="stretch">
-        <Text fontSize="3xl" fontWeight="bold" color="gray.800">Admin Dashboard</Text>
+        <Text fontSize="3xl" fontWeight="bold" color={colors.text}>Admin Dashboard</Text>
 
         <HStack gap={4} flexWrap="wrap">
           <Button
@@ -116,11 +118,11 @@ const Dashboard = () => {
           <>
             <SimpleGrid columns={{ base: 2, md: 4 }} gap={4}>
               {stats.map((stat, index) => (
-                <Box key={index} bg="white" p={6} borderRadius="lg" shadow="sm">
+                <Box key={index} bg={colors.cardBg} p={6} borderRadius="lg" shadow="sm">
                   <HStack justify="space-between">
                     <VStack align="start" gap={1}>
-                      <Text color="gray.500" fontSize="sm">{stat.label}</Text>
-                      <Text fontSize="2xl" fontWeight="bold">{stat.value}</Text>
+                      <Text color={colors.textSubtle} fontSize="sm">{stat.label}</Text>
+                      <Text fontSize="2xl" fontWeight="bold" color={colors.text}>{stat.value}</Text>
                     </VStack>
                     <Box p={3} bg={`${stat.color}.100`} borderRadius="full">
                       <stat.icon size={24} color={`var(--chakra-colors-${stat.color}-600)`} />
@@ -131,10 +133,10 @@ const Dashboard = () => {
             </SimpleGrid>
 
             <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
-              <Box bg="white" p={6} borderRadius="lg" shadow="sm">
+              <Box bg={colors.cardBg} p={6} borderRadius="lg" shadow="sm">
                 <BarChart data={enrollmentData} title="Course Enrollments" />
               </Box>
-              <Box bg="white" p={6} borderRadius="lg" shadow="sm">
+              <Box bg={colors.cardBg} p={6} borderRadius="lg" shadow="sm">
                 <PieChart data={categoryData} title="Courses by Category" />
               </Box>
             </SimpleGrid>

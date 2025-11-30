@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { blogService } from '@/services/blogService'
 import { useAuth } from '@/context/AuthContext'
+import { useThemeContext } from '@/context/ThemeContext'
 import BlogForm from '@/components/forms/BlogForm'
 
 const BlogPost = () => {
@@ -12,6 +13,7 @@ const BlogPost = () => {
   const [loading, setLoading] = useState(true)
   const [isEditing, setIsEditing] = useState(false)
   const { isAdmin } = useAuth()
+  const { colors } = useThemeContext()
 
   useEffect(() => {
     fetchBlog()
@@ -47,7 +49,7 @@ const BlogPost = () => {
   if (loading) {
     return (
       <Box py={16} px={4} textAlign="center">
-        <Text>Loading article...</Text>
+        <Text color={colors.text}>Loading article...</Text>
       </Box>
     )
   }
@@ -55,7 +57,7 @@ const BlogPost = () => {
   if (!blog) {
     return (
       <Box py={16} px={4} textAlign="center">
-        <Text>Article not found</Text>
+        <Text color={colors.text}>Article not found</Text>
       </Box>
     )
   }
@@ -65,7 +67,7 @@ const BlogPost = () => {
       <Box maxW="800px" mx="auto">
         {isEditing ? (
           <VStack gap={4}>
-            <Text fontSize="2xl" fontWeight="bold">Edit Article</Text>
+            <Text fontSize="2xl" fontWeight="bold" color={colors.text}>Edit Article</Text>
             <BlogForm blog={blog} onSuccess={handleUpdate} />
             <Button onClick={() => setIsEditing(false)} px={4} py={2}>Cancel</Button>
           </VStack>
@@ -80,11 +82,11 @@ const BlogPost = () => {
               objectFit="cover"
             />
             <Badge colorPalette="purple" fontSize="sm">{blog.category}</Badge>
-            <Text fontSize="3xl" fontWeight="bold">{blog.title}</Text>
-            <Text color="gray.500">
+            <Text fontSize="3xl" fontWeight="bold" color={colors.text}>{blog.title}</Text>
+            <Text color={colors.textSubtle}>
               By {blog.author} • {new Date(blog.date).toLocaleDateString()}
             </Text>
-            <Text color="gray.700" lineHeight="tall" fontSize="lg" whiteSpace="pre-wrap">
+            <Text color={colors.text} lineHeight="tall" fontSize="lg" whiteSpace="pre-wrap">
               {blog.content}
             </Text>
             {isAdmin && (

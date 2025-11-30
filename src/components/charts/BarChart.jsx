@@ -18,8 +18,8 @@ const BarChart = ({ data, title }) => {
       {
         label: title,
         data: data.map((item) => item.value),
-        backgroundColor: 'rgba(49, 130, 206, 0.7)',
-        borderColor: 'rgba(49, 130, 206, 1)',
+        backgroundColor: 'rgba(49, 151, 149, 0.7)',
+        borderColor: 'rgba(49, 151, 149, 1)',
         borderWidth: 1,
       },
     ],

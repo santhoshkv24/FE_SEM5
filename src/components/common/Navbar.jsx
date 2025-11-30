@@ -1,8 +1,9 @@
-import { Box, Flex, HStack, Button, IconButton, Image, Text } from '@chakra-ui/react'
+import { Box, Flex, HStack, Button, IconButton, Text } from '@chakra-ui/react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/context/AuthContext'
+import { useThemeContext } from '@/context/ThemeContext'
 import { useState } from 'react'
-import { FiMenu, FiX } from 'react-icons/fi'
+import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi'
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -17,6 +18,7 @@ const navLinks = [
 
 const Navbar = () => {
   const { user, logout, isAdmin } = useAuth()
+  const { colorMode, toggleColorMode, colors } = useThemeContext()
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -26,7 +28,7 @@ const Navbar = () => {
   }
 
   return (
-    <Box bg="teal.600" px={4} py={3} position="sticky" top={0} zIndex={100}>
+    <Box bg={colors.navBg} px={4} py={3} position="sticky" top={0} zIndex={100}>
       <Flex maxW="1200px" mx="auto" align="center" justify="space-between">
         <Link to="/">
           <HStack>
@@ -47,6 +49,16 @@ const Navbar = () => {
         </HStack>
 
         <HStack display={{ base: 'none', lg: 'flex' }} gap={3}>
+          <IconButton
+            aria-label="Toggle theme"
+            onClick={toggleColorMode}
+            variant="ghost"
+            color="white"
+            _hover={{ bg: 'teal.700' }}
+            size="sm"
+          >
+            {colorMode === 'dark' ? <FiSun /> : <FiMoon />}
+          </IconButton>
           {user ? (
             <>
               {isAdmin && (
@@ -72,15 +84,25 @@ const Navbar = () => {
           )}
         </HStack>
 
-        <IconButton
-          display={{ base: 'flex', lg: 'none' }}
-          aria-label="Toggle menu"
-          onClick={() => setIsOpen(!isOpen)}
-          variant="ghost"
-          color="white"
-        >
-          {isOpen ? <FiX /> : <FiMenu />}
-        </IconButton>
+        <HStack display={{ base: 'flex', lg: 'none' }} gap={2}>
+          <IconButton
+            aria-label="Toggle theme"
+            onClick={toggleColorMode}
+            variant="ghost"
+            color="white"
+            size="sm"
+          >
+            {colorMode === 'dark' ? <FiSun /> : <FiMoon />}
+          </IconButton>
+          <IconButton
+            aria-label="Toggle menu"
+            onClick={() => setIsOpen(!isOpen)}
+            variant="ghost"
+            color="white"
+          >
+            {isOpen ? <FiX /> : <FiMenu />}
+          </IconButton>
+        </HStack>
       </Flex>
 
       {isOpen && (

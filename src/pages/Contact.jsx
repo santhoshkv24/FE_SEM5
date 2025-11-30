@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { contactService } from '@/services/contactService'
 import { Toaster, toaster } from '@/components/ui/toaster'
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
+import { useThemeContext } from '@/context/ThemeContext'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ const Contact = () => {
     message: '',
   })
   const [loading, setLoading] = useState(false)
+  const { colors } = useThemeContext()
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -23,7 +25,6 @@ const Contact = () => {
     try {
       await contactService.create({
         ...formData,
-        date: new Date().toISOString().split('T')[0],
       })
       toaster.create({
         title: 'Message sent!',
@@ -47,47 +48,47 @@ const Contact = () => {
       <Toaster />
       <VStack maxW="1200px" mx="auto" gap={10}>
         <VStack textAlign="center" gap={4}>
-          <Text fontSize="4xl" fontWeight="bold" color="gray.800">Contact Us</Text>
-          <Text color="gray.600" maxW="600px">
+          <Text fontSize="4xl" fontWeight="bold" color={colors.text}>Contact Us</Text>
+          <Text color={colors.textMuted} maxW="600px">
             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </Text>
         </VStack>
 
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={10} w="100%">
           <VStack align="start" gap={6}>
-            <Text fontSize="2xl" fontWeight="bold">Get in Touch</Text>
+            <Text fontSize="2xl" fontWeight="bold" color={colors.text}>Get in Touch</Text>
             <VStack align="start" gap={4}>
               <Box display="flex" alignItems="center" gap={3}>
-                <Box p={3} bg="teal.100" borderRadius="full">
-                  <FiMail color="#319795" />
+                <Box p={3} bg={colors.primaryLight} borderRadius="full">
+                  <FiMail color={colors.primaryText} />
                 </Box>
                 <VStack align="start" gap={0}>
-                  <Text fontWeight="medium">Email</Text>
-                  <Text color="gray.600">info@eduquest.com</Text>
+                  <Text fontWeight="medium" color={colors.text}>Email</Text>
+                  <Text color={colors.textMuted}>info@eduquest.com</Text>
                 </VStack>
               </Box>
               <Box display="flex" alignItems="center" gap={3}>
-                <Box p={3} bg="teal.100" borderRadius="full">
-                  <FiPhone color="#319795" />
+                <Box p={3} bg={colors.primaryLight} borderRadius="full">
+                  <FiPhone color={colors.primaryText} />
                 </Box>
                 <VStack align="start" gap={0}>
-                  <Text fontWeight="medium">Phone</Text>
-                  <Text color="gray.600">+1 234 567 890</Text>
+                  <Text fontWeight="medium" color={colors.text}>Phone</Text>
+                  <Text color={colors.textMuted}>+91 9361888416</Text>
                 </VStack>
               </Box>
               <Box display="flex" alignItems="center" gap={3}>
-                <Box p={3} bg="teal.100" borderRadius="full">
-                  <FiMapPin color="#319795" />
+                <Box p={3} bg={colors.primaryLight} borderRadius="full">
+                  <FiMapPin color={colors.primaryText} />
                 </Box>
                 <VStack align="start" gap={0}>
-                  <Text fontWeight="medium">Address</Text>
-                  <Text color="gray.600">123 Learning St, Education City, EC 12345</Text>
+                  <Text fontWeight="medium" color={colors.text}>Address</Text>
+                  <Text color={colors.textMuted}>Boys Hostel (Vedavati/Ganga), SRM AP, Guntur</Text>
                 </VStack>
               </Box>
             </VStack>
           </VStack>
 
-          <Box as="form" onSubmit={handleSubmit} bg="white" p={8} borderRadius="lg" shadow="md">
+          <Box as="form" onSubmit={handleSubmit} bg={colors.cardBg} p={8} borderRadius="lg" shadow="md">
             <VStack gap={4}>
               <Input
                 name="name"

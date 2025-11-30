@@ -10,9 +10,9 @@ const PieChart = ({ data, title }) => {
       {
         data: data.map((item) => item.value),
         backgroundColor: [
-          'rgba(49, 130, 206, 0.7)',
-          'rgba(72, 187, 120, 0.7)',
+          'rgba(49, 151, 149, 0.7)',
           'rgba(237, 137, 54, 0.7)',
+          'rgba(72, 187, 120, 0.7)',
           'rgba(159, 122, 234, 0.7)',
           'rgba(246, 173, 85, 0.7)',
           'rgba(245, 101, 101, 0.7)',

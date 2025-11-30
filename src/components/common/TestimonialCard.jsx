@@ -1,9 +1,12 @@
 import { Box, Image, Text, HStack, VStack } from '@chakra-ui/react'
 import { FiStar } from 'react-icons/fi'
+import { useThemeContext } from '@/context/ThemeContext'
 
 const TestimonialCard = ({ testimonial }) => {
+  const { colors } = useThemeContext()
+  
   return (
-    <Box bg="white" borderRadius="lg" shadow="md" p={6} _hover={{ shadow: 'lg' }} transition="all 0.2s">
+    <Box bg={colors.cardBg} borderRadius="lg" shadow="md" p={6} _hover={{ shadow: 'lg' }} transition="all 0.2s">
       <HStack mb={4}>
         {[...Array(5)].map((_, i) => (
           <FiStar
@@ -13,7 +16,7 @@ const TestimonialCard = ({ testimonial }) => {
           />
         ))}
       </HStack>
-      <Text color="gray.600" fontSize="md" mb={4} fontStyle="italic">
+      <Text color={colors.textMuted} fontSize="md" mb={4} fontStyle="italic">
         "{testimonial.content}"
       </Text>
       <HStack>
@@ -26,8 +29,8 @@ const TestimonialCard = ({ testimonial }) => {
           objectFit="cover"
         />
         <VStack align="start" gap={0}>
-          <Text fontWeight="bold" color="gray.800">{testimonial.name}</Text>
-          <Text color="gray.500" fontSize="sm">{testimonial.role}</Text>
+          <Text fontWeight="bold" color={colors.text}>{testimonial.name}</Text>
+          <Text color={colors.textSubtle} fontSize="sm">{testimonial.role}</Text>
         </VStack>
       </HStack>
     </Box>

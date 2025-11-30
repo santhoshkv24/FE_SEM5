@@ -1,13 +1,15 @@
 import { Box, Text, VStack, HStack, Button, Badge } from '@chakra-ui/react'
 import { FiCheck } from 'react-icons/fi'
+import { useThemeContext } from '@/context/ThemeContext'
 
 const PricingCard = ({ plan }) => {
   const isPopular = plan.popular
+  const { colors } = useThemeContext()
 
   return (
     <Box
-      bg={isPopular ? 'teal.600' : 'white'}
-      color={isPopular ? 'white' : 'gray.800'}
+      bg={isPopular ? 'teal.600' : colors.cardBg}
+      color={isPopular ? 'white' : colors.text}
       borderRadius="lg"
       shadow="lg"
       p={6}
@@ -27,9 +29,9 @@ const PricingCard = ({ plan }) => {
         </Text>
         <HStack justify="center" align="baseline">
           <Text fontSize="4xl" fontWeight="bold">
-            ${plan.price}
+            Rs. {plan.price}
           </Text>
-          <Text fontSize="sm" color={isPopular ? 'teal.100' : 'gray.500'}>
+          <Text fontSize="sm" color={isPopular ? 'teal.100' : colors.textSubtle}>
             /{plan.period}
           </Text>
         </HStack>
