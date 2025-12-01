@@ -53,6 +53,8 @@ const CourseForm = ({ course, onSuccess }) => {
           value={formData.title}
           onChange={handleChange}
           required
+          px={4}
+          py={3}
         />
         <Textarea
           name="description"
@@ -60,6 +62,8 @@ const CourseForm = ({ course, onSuccess }) => {
           value={formData.description}
           onChange={handleChange}
           required
+          px={4}
+          py={3}
         />
         <SimpleGrid columns={2} gap={4} w="100%">
           <Input
@@ -68,6 +72,8 @@ const CourseForm = ({ course, onSuccess }) => {
             value={formData.instructor}
             onChange={handleChange}
             required
+            px={4}
+            py={3}
           />
           <Input
             name="category"
@@ -75,6 +81,8 @@ const CourseForm = ({ course, onSuccess }) => {
             value={formData.category}
             onChange={handleChange}
             required
+            px={4}
+            py={3}
           />
         </SimpleGrid>
         <SimpleGrid columns={2} gap={4} w="100%">
@@ -86,6 +94,8 @@ const CourseForm = ({ course, onSuccess }) => {
             value={formData.price}
             onChange={handleChange}
             required
+            px={4}
+            py={3}
           />
           <Input
             name="duration"
@@ -93,6 +103,8 @@ const CourseForm = ({ course, onSuccess }) => {
             value={formData.duration}
             onChange={handleChange}
             required
+            px={4}
+            py={3}
           />
         </SimpleGrid>
         <Input
@@ -101,6 +113,8 @@ const CourseForm = ({ course, onSuccess }) => {
           value={formData.image}
           onChange={handleChange}
           required
+          px={4}
+          py={3}
         />
         <Button type="submit" colorPalette="teal" w="full" loading={loading} px={4} py={2}>
           {course ? 'Update Course' : 'Create Course'}

@@ -56,7 +56,6 @@ const BlogsTable = ({ blogs, onRefresh }) => {
               <Table.ColumnHeader px={4} py={3} color={colors.text}>Title</Table.ColumnHeader>
               <Table.ColumnHeader px={4} py={3} color={colors.text}>Author</Table.ColumnHeader>
               <Table.ColumnHeader px={4} py={3} color={colors.text}>Category</Table.ColumnHeader>
-              <Table.ColumnHeader px={4} py={3} color={colors.text}>Date</Table.ColumnHeader>
               <Table.ColumnHeader px={4} py={3} color={colors.text}>Actions</Table.ColumnHeader>
             </Table.Row>
           </Table.Header>
@@ -66,7 +65,6 @@ const BlogsTable = ({ blogs, onRefresh }) => {
                 <Table.Cell px={4} py={3} color={colors.text}>{blog.title}</Table.Cell>
                 <Table.Cell px={4} py={3} color={colors.text}>{blog.author}</Table.Cell>
                 <Table.Cell px={4} py={3} color={colors.text}>{blog.category}</Table.Cell>
-                <Table.Cell px={4} py={3} color={colors.text}>{new Date(blog.date).toLocaleDateString()}</Table.Cell>
                 <Table.Cell px={4} py={3}>
                   <HStack gap={2}>
                     <Button size="sm" colorPalette="yellow" onClick={() => handleEdit(blog)} px={3} py={1}>

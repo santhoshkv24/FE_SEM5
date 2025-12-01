@@ -48,6 +48,8 @@ const BlogForm = ({ blog, onSuccess }) => {
           value={formData.title}
           onChange={handleChange}
           required
+          px={4}
+          py={3}
         />
         <Textarea
           name="content"
@@ -56,6 +58,8 @@ const BlogForm = ({ blog, onSuccess }) => {
           value={formData.content}
           onChange={handleChange}
           required
+          px={4}
+          py={3}
         />
         <SimpleGrid columns={2} gap={4} w="100%">
           <Input
@@ -64,6 +68,8 @@ const BlogForm = ({ blog, onSuccess }) => {
             value={formData.author}
             onChange={handleChange}
             required
+            px={4}
+            py={3}
           />
           <Input
             name="category"
@@ -71,6 +77,8 @@ const BlogForm = ({ blog, onSuccess }) => {
             value={formData.category}
             onChange={handleChange}
             required
+            px={4}
+            py={3}
           />
         </SimpleGrid>
         <Input
@@ -79,6 +87,8 @@ const BlogForm = ({ blog, onSuccess }) => {
           value={formData.image}
           onChange={handleChange}
           required
+          px={4}
+          py={3}
         />
         <Button type="submit" colorPalette="teal" w="full" loading={loading} px={4} py={2}>
           {blog ? 'Update Article' : 'Create Article'}

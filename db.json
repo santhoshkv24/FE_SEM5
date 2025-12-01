@@ -17,86 +17,74 @@
   ],
   "courses": [
     {
-      "id": "1",
       "title": "Complete Web Development Bootcamp",
       "description": "Learn HTML, CSS, JavaScript, React and Node.js from scratch. Build real-world projects and become a full-stack developer.",
-      "instructor": "John Smith",
+      "instructor": "K V Santhosh",
       "price": 2999,
       "duration": "40 hours",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400",
       "category": "Web Development",
       "enrolled": 1250,
-      "rating": 4.8
+      "rating": 4.8,
+      "id": "1"
     },
     {
-      "id": "2",
       "title": "Python for Data Science",
       "description": "Master Python programming and data analysis techniques. Learn pandas, numpy, matplotlib and machine learning basics.",
-      "instructor": "Sarah Johnson",
+      "instructor": "Mokshith",
       "price": 1999,
       "duration": "35 hours",
       "image": "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400",
       "category": "Data Science",
       "enrolled": 890,
-      "rating": 4.7
+      "rating": 4.7,
+      "id": "2"
     },
     {
-      "id": "3",
       "title": "UI/UX Design Masterclass",
       "description": "Learn user interface and user experience design principles. Master Figma and create stunning designs.",
-      "instructor": "Emily Davis",
+      "instructor": "Sriram",
       "price": 899,
       "duration": "30 hours",
       "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400",
       "category": "Design",
       "enrolled": 650,
-      "rating": 4.9
+      "rating": 4.9,
+      "id": "3"
     },
     {
-      "id": "4",
       "title": "Mobile App Development with React Native",
       "description": "Build cross-platform mobile apps for iOS and Android using React Native and JavaScript.",
-      "instructor": "Mike Wilson",
+      "instructor": "Adithya",
       "price": 1599,
       "duration": "45 hours",
       "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400",
       "category": "Mobile Development",
       "enrolled": 720,
-      "rating": 4.6
+      "rating": 4.6,
+      "id": "4"
     },
     {
-      "id": "5",
       "title": "Digital Marketing Fundamentals",
       "description": "Learn SEO, social media marketing, content marketing and paid advertising strategies.",
-      "instructor": "Lisa Chen",
+      "instructor": "Siddharth",
       "price": 1699,
       "duration": "25 hours",
       "image": "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=400",
       "category": "Marketing",
       "enrolled": 980,
-      "rating": 4.5
-    },
-    {
-      "id": "6",
-      "title": "Cloud Computing with AWS",
-      "description": "Master Amazon Web Services and cloud architecture. Prepare for AWS certification exams.",
-      "instructor": "Robert Brown",
-      "price": 1299,
-      "duration": "50 hours",
-      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400",
-      "category": "Cloud Computing",
-      "enrolled": 540,
-      "rating": 4.8
+      "rating": 4.5,
+      "id": "6"
     }
   ],
   "blogs": [
     {
-      "id": "1",
       "title": "Getting Started with React in 2024",
       "content": "React continues to be one of the most popular JavaScript libraries for building user interfaces. In this comprehensive guide, we'll explore the latest features and best practices for React development. Whether you're a beginner or an experienced developer, understanding React's component-based architecture and hooks system is essential for modern web development. We'll cover useState, useEffect, and custom hooks to help you build efficient applications.",
       "author": "Karthik Subramanian",
+      "category": "React",
       "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400",
-      "category": "React"
+      "id": "1"
     },
     {
       "id": "2",

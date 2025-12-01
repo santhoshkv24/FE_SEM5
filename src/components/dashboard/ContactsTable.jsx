@@ -31,7 +31,6 @@ const ContactsTable = ({ contacts, onRefresh }) => {
               <Table.ColumnHeader px={4} py={3} color={colors.text}>Email</Table.ColumnHeader>
               <Table.ColumnHeader px={4} py={3} color={colors.text}>Subject</Table.ColumnHeader>
               <Table.ColumnHeader px={4} py={3} color={colors.text}>Message</Table.ColumnHeader>
-              <Table.ColumnHeader px={4} py={3} color={colors.text}>Date</Table.ColumnHeader>
               <Table.ColumnHeader px={4} py={3} color={colors.text}>Actions</Table.ColumnHeader>
             </Table.Row>
           </Table.Header>
@@ -47,7 +46,6 @@ const ContactsTable = ({ contacts, onRefresh }) => {
                   <Table.Cell px={4} py={3} color={colors.text}>{contact.email}</Table.Cell>
                   <Table.Cell px={4} py={3} color={colors.text}>{contact.subject}</Table.Cell>
                   <Table.Cell px={4} py={3} maxW="200px" truncate color={colors.text}>{contact.message}</Table.Cell>
-                  <Table.Cell px={4} py={3} color={colors.text}>{new Date(contact.date).toLocaleDateString()}</Table.Cell>
                   <Table.Cell px={4} py={3}>
                     <Button size="sm" colorPalette="red" onClick={() => handleDelete(contact.id)} px={3} py={1}>
                       Delete
